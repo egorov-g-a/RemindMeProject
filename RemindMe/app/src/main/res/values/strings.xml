@@ -8,4 +8,7 @@
     <string name="menu_item_settings">Настройки</string>
     <string name="menu_item_info">Справка</string>
     <string name="header_email">ivan-ivanov@mail.ru</string>
+
+    <string name="view_navigation_open">Open</string>
+    <string name="view_navigation_close">Close</string>
 </resources>
