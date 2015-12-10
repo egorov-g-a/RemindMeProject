@@ -15,6 +15,9 @@ public abstract class AbstractTabFragment extends Fragment {
     protected Context context;
     protected View view;
 
+    protected AbstractTabFragment(){
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public abstract class AbstractTabFragment extends Fragment {
     }
 
     protected abstract int getLayout();
+    protected abstract int titleResId();
 
     public void setContext(Context context) {
         this.context = context;

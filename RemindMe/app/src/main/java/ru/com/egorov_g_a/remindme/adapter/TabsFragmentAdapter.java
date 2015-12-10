@@ -8,8 +8,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.HashMap;
 import java.util.Map;
 
+import ru.com.egorov_g_a.remindme.Constants;
 import ru.com.egorov_g_a.remindme.fragment.AbstractTabFragment;
 import ru.com.egorov_g_a.remindme.fragment.BirthdaysFragment;
+import ru.com.egorov_g_a.remindme.fragment.TabFragmentFactory;
 import ru.com.egorov_g_a.remindme.fragment.HistoryFragment;
 import ru.com.egorov_g_a.remindme.fragment.IdeasFragment;
 import ru.com.egorov_g_a.remindme.fragment.TodoFragment;
@@ -42,9 +44,9 @@ public class TabsFragmentAdapter extends FragmentPagerAdapter {
 
     private void initTabsMap(Context context) {
         tabs = new HashMap<>();
-        tabs.put(0, HistoryFragment.getInstance(context));
-        tabs.put(1, IdeasFragment.getInstance(context));
-        tabs.put(2, TodoFragment.getInstance(context));
-        tabs.put(3, BirthdaysFragment.getInstance(context));
+        tabs.put(Constants.TAB_HISTORY, TabFragmentFactory.getInstance(HistoryFragment.class, context));
+        tabs.put(Constants.TAB_IDEAS, TabFragmentFactory.getInstance(IdeasFragment.class, context));
+        tabs.put(Constants.TAB_TODO, TabFragmentFactory.getInstance(TodoFragment.class, context));
+        tabs.put(Constants.TAB_BIRTHDAYS, TabFragmentFactory.getInstance(BirthdaysFragment.class, context));
     }
 }

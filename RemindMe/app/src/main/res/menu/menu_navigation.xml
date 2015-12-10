@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/menu_group1">
+        <item android:id="@+id/menu_history"
+              android:orderInCategory="1"
+              android:title="@string/menu_item_history"
+              android:icon="@mipmap/ic_archive_black_24dp"/>
 
-    <item android:id="@+id/menu_notification"
-          android:orderInCategory="1"
-          android:title="@string/menu_item_notification"
-          android:icon="@mipmap/ic_speaker_notes_black_24dp"/>
+        <item android:id="@+id/menu_ideas"
+              android:orderInCategory="2"
+              android:title="@string/menu_item_ideas"
+              android:icon="@mipmap/ic_list_black_24dp"/>
 
-    <item android:id="@+id/menu_favorite"
-          android:orderInCategory="2"
-          android:title="@string/menu_item_favorite"
-          android:icon="@mipmap/ic_star_black_24dp"/>
+        <item android:id="@+id/menu_todo"
+              android:orderInCategory="3"
+              android:title="@string/menu_item_todo"
+              android:icon="@mipmap/ic_spellcheck_black_24dp"/>
 
-    <item android:id="@+id/menu_archive"
-          android:orderInCategory="3"
-          android:title="@string/menu_item_archive"
-          android:icon="@mipmap/ic_archive_black_24dp"/>
+        <item android:id="@+id/menu_birthdays"
+              android:orderInCategory="4"
+              android:title="@string/menu_item_birthdays"
+              android:icon="@mipmap/ic_cake_black_24dp"/>
+    </group>
 
-    <item android:id="@+id/menu_settings"
-          android:orderInCategory="4"
-          android:title="@string/menu_item_settings"
-          android:icon="@mipmap/ic_settings_black_24dp"/>
+    <group android:id="@+id/menu_group2">
+        <item android:id="@+id/menu_settings"
+              android:orderInCategory="100"
+              android:title="@string/menu_item_settings"
+              android:icon="@mipmap/ic_settings_black_24dp"/>
 
-    <item android:id="@+id/menu_info"
-          android:orderInCategory="5"
-          android:title="@string/menu_item_info"
-          android:icon="@mipmap/ic_info_black_24dp"/>
-
+        <item android:id="@+id/menu_info"
+              android:orderInCategory="101"
+              android:title="@string/menu_item_info"
+              android:icon="@mipmap/ic_info_black_24dp"/>
+    </group>
 </menu>

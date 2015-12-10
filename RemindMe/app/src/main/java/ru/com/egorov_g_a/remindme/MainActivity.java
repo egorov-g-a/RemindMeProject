@@ -65,16 +65,21 @@ public class MainActivity extends AppCompatActivity{
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 drawerLayout.closeDrawers();
                 switch(menuItem.getItemId()) {
-                    case R.id.menu_notification:
-                        showNotificationTab();
+                    case R.id.menu_history:
+                        viewPager.setCurrentItem(Constants.TAB_HISTORY);
+                        break;
+                    case R.id.menu_ideas:
+                        viewPager.setCurrentItem(Constants.TAB_IDEAS);
+                        break;
+                    case R.id.menu_todo:
+                        viewPager.setCurrentItem(Constants.TAB_TODO);
+                        break;
+                    case R.id.menu_birthdays:
+                        viewPager.setCurrentItem(Constants.TAB_BIRTHDAYS);
                         break;
                 }
                 return false;
             }
         });
-    }
-
-    private void showNotificationTab() {
-        viewPager.setCurrentItem(Constants.TAB_TWO);
     }
 }

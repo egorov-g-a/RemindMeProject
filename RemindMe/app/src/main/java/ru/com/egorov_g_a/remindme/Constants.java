@@ -1,7 +1,8 @@
 package ru.com.egorov_g_a.remindme;
 
 public class Constants {
-    public static final int TAB_ONE = 0;
-    public static final int TAB_TWO = 1;
-    public static final int TAB_THREE = 2;
+    public static final int TAB_HISTORY = 0;
+    public static final int TAB_IDEAS = 1;
+    public static final int TAB_TODO = 2;
+    public static final int TAB_BIRTHDAYS = 3;
 }
