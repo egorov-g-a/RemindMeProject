@@ -10,13 +10,13 @@ import android.widget.TextView;
 import java.util.List;
 
 import ru.com.egorov_g_a.remindme.R;
-import ru.com.egorov_g_a.remindme.dto.RemindDTO;
+import ru.com.egorov_g_a.remindme.dto.AbstractEntityDTO;
 
-public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.RemindViewHolder> {
+public class RemindListAdapter<DTO extends AbstractEntityDTO> extends RecyclerView.Adapter<RemindListAdapter.RemindViewHolder> {
 
-    private List<RemindDTO> data;
+    private List<DTO> data;
 
-    public RemindListAdapter(List<RemindDTO> data) {
+    public RemindListAdapter(List<DTO> data) {
         this.data = data;
     }
 
@@ -29,7 +29,7 @@ public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.Re
 
     @Override
     public void onBindViewHolder(RemindViewHolder holder, int position) {
-        RemindDTO item = data.get(position);
+        AbstractEntityDTO item = data.get(position);
         holder.title.setText(item.getTitle());
     }
 
@@ -49,5 +49,9 @@ public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.Re
             cardView = (CardView) itemView.findViewById(R.id.cardView);
             title = (TextView) itemView.findViewById(R.id.title);
         }
+    }
+
+    public void setData(List<DTO> data) {
+        this.data = data;
     }
 }

@@ -1,5 +1,7 @@
 package ru.com.egorov_g_a.remindme.fragment;
 
+import java.util.List;
+
 import ru.com.egorov_g_a.remindme.R;
 
 public class BirthdaysFragment extends AbstractTabFragment {
@@ -13,6 +15,11 @@ public class BirthdaysFragment extends AbstractTabFragment {
     @Override
     protected int titleResId() {
         return R.string.tab_item_birthdays;
+    }
+
+    @Override
+    public void refreshData(List data) {
+        //FIXME : STUB method
     }
 
 }

@@ -8,15 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import ru.com.egorov_g_a.remindme.R;
 import ru.com.egorov_g_a.remindme.adapter.RemindListAdapter;
-import ru.com.egorov_g_a.remindme.dto.RemindDTO;
 
 public class HistoryFragment extends AbstractTabFragment {
     private static final int LAYOUT = R.layout.fragment_history;
+    private RemindListAdapter adapter;
+
 
     @Nullable
     @Override
@@ -25,20 +25,10 @@ public class HistoryFragment extends AbstractTabFragment {
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        recyclerView.setAdapter(new RemindListAdapter(createMockRemindListData()));
+
+        adapter = new RemindListAdapter(data);
+        recyclerView.setAdapter(adapter);
         return view;
-    }
-
-    private List<RemindDTO> createMockRemindListData() {
-        List<RemindDTO> data = new ArrayList<>();
-        data.add(new RemindDTO("Item 1"));
-        data.add(new RemindDTO("Item 2"));
-        data.add(new RemindDTO("Item 3"));
-        data.add(new RemindDTO("Item 4"));
-        data.add(new RemindDTO("Item 5"));
-        data.add(new RemindDTO("Item 6"));
-
-        return data;
     }
 
     @Override
@@ -50,4 +40,12 @@ public class HistoryFragment extends AbstractTabFragment {
     protected int titleResId() {
         return R.string.tab_item_history;
     }
+
+    @Override
+    public void refreshData(List data) {
+        adapter.setData(data);
+        adapter.notifyDataSetChanged();
+    }
+
+
 }

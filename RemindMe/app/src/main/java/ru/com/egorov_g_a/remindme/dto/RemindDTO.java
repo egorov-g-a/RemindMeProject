@@ -1,18 +1,21 @@
 package ru.com.egorov_g_a.remindme.dto;
 
-public class RemindDTO {
+import java.util.Date;
 
-    private String title;
+public class RemindDTO extends AbstractEntityDTO {
 
-    public RemindDTO(String title) {
-        this.title = title;
+    private Date remindDate;
+
+//    public RemindDTO() {
+//    }
+
+
+    public Date getRemindDate() {
+        return remindDate;
     }
 
-    public String getTitle() {
-        return title;
+    public void setRemindDate(Date remindDate) {
+        this.remindDate = remindDate;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 }

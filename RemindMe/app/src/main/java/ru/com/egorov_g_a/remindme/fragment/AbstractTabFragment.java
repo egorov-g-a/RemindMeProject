@@ -9,11 +9,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public abstract class AbstractTabFragment extends Fragment {
+import java.util.List;
+
+import ru.com.egorov_g_a.remindme.dto.AbstractEntityDTO;
+
+public abstract class AbstractTabFragment<DTO extends AbstractEntityDTO> extends Fragment {
 
     private String title;
     protected Context context;
     protected View view;
+    protected List<DTO> data;
 
     protected AbstractTabFragment(){
     }
@@ -26,7 +31,10 @@ public abstract class AbstractTabFragment extends Fragment {
     }
 
     protected abstract int getLayout();
+
     protected abstract int titleResId();
+
+    public abstract void refreshData(List<DTO> data);
 
     public void setContext(Context context) {
         this.context = context;
@@ -38,5 +46,9 @@ public abstract class AbstractTabFragment extends Fragment {
 
     public String getTitle() {
         return title;
+    }
+
+    public void setData(List<DTO> data) {
+        this.data = data;
     }
 }
